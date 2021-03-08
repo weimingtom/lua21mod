@@ -1,0 +1,38 @@
+print("hello")
+State 0, token -none-
+>>> yy_state, yy_n == 0, -1000
+Reduce by (1) "functionlist : /* empty */"
+State 1, token -none-
+>>> yy_state, yy_n == 1, -268
+Received token NAME
+<<< yy_n, yychar == -268, 273
+Reduce by (2) "functionlist : functionlist"
+State 2, token NAME
+>>> yy_state, yy_n == 2, -1000
+Reduce by (16) "stat : /* empty */"
+State 9, token NAME
+>>> yy_state, yy_n == 9, -205
+<<< yy_n, yychar == -205, 273
+State 24, token -none-
+>>> yy_state, yy_n == 24, -1000
+Reduce by (96) "singlevar : NAME"
+State 22, token -none-
+>>> yy_state, yy_n == 22, -1000
+Reduce by (93) "var : singlevar"
+State 20, token -none-
+>>> yy_state, yy_n == 20, -1000
+Received token end-of-file
+Reduce by (97) "varexp : var"
+State 23, token end-of-file
+>>> yy_state, yy_n == 23, 40
+<<< yy_n, yychar == 40, 0
+Reduce by (66) "funcvalue : varexp"
+State 21, token end-of-file
+>>> yy_state, yy_n == 21, 78
+<<< yy_n, yychar == 78, 0
+Reduce by (63) "table : /* empty */"
+State 38, token end-of-file
+>>> yy_state, yy_n == 38, -49
+<<< yy_n, yychar == -49, 0
+lua: syntax error near "" at line 1 in file "String: print("hel..."
+

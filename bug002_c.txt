@@ -1,0 +1,81 @@
+print("hello")
+State 0, token -none-
+>>> yy_state, yy_n == 0, -1000
+Reduce by (1) "functionlist : /* empty */"
+State 1, token -none-
+>>> yy_state, yy_n == 1, -268
+Received token NAME
+<<< yy_n, yychar == -268, 273
+Reduce by (2) "functionlist : functionlist"
+State 2, token NAME
+>>> yy_state, yy_n == 2, -1000
+Reduce by (16) "stat : /* empty */"
+State 9, token NAME
+>>> yy_state, yy_n == 9, -205
+<<< yy_n, yychar == -205, 273
+State 24, token -none-
+>>> yy_state, yy_n == 24, -1000
+Reduce by (96) "singlevar : NAME"
+State 22, token -none-
+>>> yy_state, yy_n == 22, -1000
+Reduce by (93) "var : singlevar"
+State 20, token -none-
+>>> yy_state, yy_n == 20, -1000
+Received token -unknown-
+Reduce by (97) "varexp : var"
+State 23, token -unknown-
+>>> yy_state, yy_n == 23, 40
+<<< yy_n, yychar == 40, 40
+Reduce by (66) "funcvalue : varexp"
+State 21, token -unknown-
+>>> yy_state, yy_n == 21, 78
+<<< yy_n, yychar == 78, 40
+State 47, token -none-
+>>> yy_state, yy_n == 47, 4
+Received token STRING
+<<< yy_n, yychar == 4, 272
+State 34, token -none-
+>>> yy_state, yy_n == 34, -1000
+Reduce by (55) "expr : STRING"
+State 79, token -none-
+>>> yy_state, yy_n == 79, -1000
+Received token -unknown-
+Reduce by (72) "exprlist1 : expr"
+State 86, token -unknown-
+>>> yy_state, yy_n == 86, 57
+<<< yy_n, yychar == 57, 41
+Reduce by (71) "exprlist : exprlist1"
+State 85, token -unknown-
+>>> yy_state, yy_n == 85, 66
+<<< yy_n, yychar == 66, 41
+State 122, token -none-
+>>> yy_state, yy_n == 122, -1000
+Reduce by (68) "funcParams : '(' exprlist ')'"
+State 46, token -none-
+>>> yy_state, yy_n == 46, -1000
+Reduce by (65) "functioncall : funcvalue funcParams"
+State 18, token -none-
+>>> yy_state, yy_n == 18, -1000
+Reduce by (26) "stat1 : functioncall"
+State 13, token -none-
+>>> yy_state, yy_n == 13, -1000
+Reduce by (17) "stat : stat1"
+State 8, token -none-
+>>> yy_state, yy_n == 8, 32
+Received token end-of-file
+<<< yy_n, yychar == 32, 0
+Reduce by (14) "sc : /* empty */"
+State 11, token end-of-file
+>>> yy_state, yy_n == 11, -1000
+Reduce by (3) "functionlist : functionlist stat sc"
+State 1, token end-of-file
+>>> yy_state, yy_n == 1, -268
+<<< yy_n, yychar == -268, 0
+
+
+CODE
+0    PUSHGLOBAL   7
+3    PUSHSTRING   0
+6    CALLFUNC 1 0
+9    RETCODE0
+hello

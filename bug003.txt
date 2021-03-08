@@ -1,0 +1,15 @@
+Ctrl+D and enter, C# crash
+
+--------------
+solve: see
+
+Tool.cs
+
+if ( fieldPrecision >= 0 ) {
+	w = w.Substring( 0, fieldPrecision);
+}
+->
+if ( fieldPrecision >= 0 ) {
+	w = w.Substring( 0, w.Length < fieldPrecision ? w.Length : fieldPrecision);
+}
+

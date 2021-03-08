@@ -1,0 +1,19 @@
+		 	s = lua_getstring(o); c = new CharPtr(s);
+--> here no strdup		 	
+------------------
+
+internal->private
+
+-----------------
+
+public static Object lua_getfield(Object_ @object, CharPtr field)
+
+Object->Object_
+
+-----------------
+
+sscanf
+
+----------------
+
+sizeof(Word)->sizeof_Word

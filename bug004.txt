@@ -1,0 +1,36 @@
+(x) dump.lua used by save.lua (use lua-2.5.tar.gz test)
+save.lua (c version also not work) (use lua-2.5.tar.gz test)
+sort.lua
+(x) sort2.lua (use lua-2.5.tar.gz test)
+type.lua (c version work) (use lua-2.5.tar.gz test)
+ 
+-------------
+solve save.lua/sort2.lua/type.lua (c version) crash, see:
+
+void luaI_free (void *block)
+{
+-->#if 0
+  *((int *)block) = -1;  /* to catch errors */
+-->#endif
+  free(block);
+}
+
+--------------
+solve save.lua (csharp version)  crash
+
+return (Word)((Word)h%nhash(t));  /* make it a valid index */
+->		   			
+return (Word)((Word)(h & 0xffff) % nhash(t));  /* make it a valid index */
+
+----------------
+??? sort.lua
+
+
+--> basepc.chars = growvector_Byte(basepc.chars, basepc.index, maxcurr);
+growvector_Byte function not good, use basepc as var
+
+----------------
+
+
+----------------
+
